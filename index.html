@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MBTC</title>
+<style>
+  body {
+    font-family: 'Georgia', sans-serif;
+    text-align: center;
+    background-color:  rgb(243, 43, 153);
+  }
+  #lyrics {
+    margin-top: 20px;
+    font-size: 20px;
+  }
+</style>
+</head>
+<body>
+  <h1>HAPPIEST BIRTHDAY TO YOUU!!</h1>
+  <audio id="myAudio">
+    <source src="Happy Birthday Song Happy Birthday Status video WhatsApp Status  15 seconds -  April 2021.mp3" type="audio/mpeg">
+  </audio>
+  <button onclick="togglePlay()">Play Music</button>
+  <div id="lyrics"></div>
+  <script>
+    var lyricsElement = document.getElementById("lyrics");
+    var lyrics = ["Happy Birthday To You!", "Happy Birthday To You!", "Happy Birthday!", "Happy Birthday!", "Happy Birthday To You!"];
+    var currentLine = 0;
+    var audio = document.getElementById("myAudio");
+
+    function togglePlay() {
+      if (audio.paused) {
+        audio.play();
+        showLyrics();
+      } else {
+        audio.pause();
+      }
+    }
+
+    var timings = [3000, 3099, 1500, 1500, 3000];
+function showLyrics() {
+  if (currentLine < lyrics.length) {
+    lyricsElement.innerText += lyrics[currentLine] + "\n";
+    setTimeout(showLyrics, timings[currentLine]);
+    currentLine++;
+  }
+}
+  </script>
+</body>
+</html>
